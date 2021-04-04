@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiEndpoint: 'http://java-veterinary-curse-project.herokuapp.com/veterinary/v1'
+  apiEndpoint: 'https://java-veterinary-curse-project.herokuapp.com/veterinary/v1'
 };
