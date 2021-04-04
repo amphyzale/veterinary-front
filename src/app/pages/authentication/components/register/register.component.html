@@ -1,0 +1,92 @@
+<div class="body">
+    <div class="form">
+        <h1 class="form_title">Sign Up</h1>
+        <div>
+            <h2>Credentials</h2>
+            <div class="form_group">
+                <label class="form_label">Email</label>
+                <dx-text-box class="form_input" placeholder="Enter email" [(value)]="user.email">
+                    <dx-validator (onValidated)="onValidatedEmail($event.isValid)">
+                        <dxi-validation-rule type="required" message="Email is required">
+                        </dxi-validation-rule>
+                        <dxi-validation-rule type="email" message="Email is invalid"></dxi-validation-rule>
+                    </dx-validator>
+                </dx-text-box>
+            </div>
+            <div class="form_group">
+                <label class="form_label">Password</label>
+                <dx-text-box class="form_input" placeholder="Enter password" mode="password" [(value)]="user.password">
+                    <dx-validator (onValidated)="onValidatedPassword($event.isValid)">
+                        <dxi-validation-rule type="required" message="Password is required">
+                        </dxi-validation-rule>
+                    </dx-validator>
+                </dx-text-box>
+            </div>
+            <div class="form_group">
+                <label class="form_label">Confirm password</label>
+                <dx-text-box class="form_input" placeholder="Confirm password" mode="password">
+                    <dx-validator (onValidated)="onValidatedConfirmPassword($event.isValid)">
+                        <dxi-validation-rule type="required" message="Confirm Password is required">
+                        </dxi-validation-rule>
+                        <dxi-validation-rule type="compare" [comparisonTarget]="passwordComparison"
+                            message="Password and Confirm Password do not match">
+                        </dxi-validation-rule>
+                    </dx-validator>
+                </dx-text-box>
+            </div>
+            <div class="form_group">
+                <label class="form_label">Phone</label>
+                <dx-text-box class="form_input" [(value)]="user.phone" mask="+7 (X00) 000-0000" [maskRules]="phoneRules"
+                    maskInvalidMessage="The phone must have a correct RUS phone format" [useMaskedValue]="true">
+                    <dx-validator (onValidated)="onValidatedPhone($event.isValid)">
+                        <dxi-validation-rule type="required" message="Phone is required"></dxi-validation-rule>
+                        <dxi-validation-rule type="pattern" [pattern]="phonePattern"
+                            message="The phone must have a correct RUS phone format">
+                        </dxi-validation-rule>
+                    </dx-validator>
+                </dx-text-box>
+            </div>
+        </div>
+        <div>
+            <h2>Personal Data</h2>
+            <div class="form_group">
+                <label class="form_label">Last name</label>
+                <dx-text-box class="form_input" placeholder="Enter last name" [(value)]="user.lastName">
+                    <dx-validator (onValidated)="onValidatedLastName($event.isValid)">
+                        <dxi-validation-rule type="required" message="Last name is required"></dxi-validation-rule>
+                    </dx-validator>
+                </dx-text-box>
+            </div>
+            <div class="form_group">
+                <label class="form_label">First name</label>
+                <dx-text-box class="form_input" placeholder="Enter first name" [(value)]="user.firstName">
+                    <dx-validator (onValidated)="onValidatedFirstName($event.isValid)">
+                        <dxi-validation-rule type="required" message="First name is required"></dxi-validation-rule>
+                    </dx-validator>
+                </dx-text-box>
+            </div>
+            <div class="form_group">
+                <label class="form_label">Patronymic</label>
+                <dx-text-box class="form_input" placeholder="Enter patronymic" [(value)]="user.patronymic">
+                </dx-text-box>
+            </div>
+            <div class="form_group">
+                <!-- надо добавить заголовок label не каатит, не совместимость классов -->
+                <dx-select-box placeholder="Enter gender" [(value)]="user.gender" [dataSource]="genders">
+                </dx-select-box>
+            </div>
+            <div class="form_group">
+                <dx-date-box [(value)]="user.birthDate" [displayFormat]="dateTimeFormat"
+                    invalidDateMessage="The date must have the following format: MM/dd/yyyy">
+                    <dx-validator>
+                        <dxi-validation-rule type="required" message="Date of birth is required"></dxi-validation-rule>
+                        <dxi-validation-rule type="range" [max]="maxDate" message="You must be at least 18 years old">
+                        </dxi-validation-rule>
+                    </dx-validator>
+                </dx-date-box>
+            </div>
+        </div>
+        <dx-button class="form_button" text="Sign Up" [disabled]="!isDisabled" (onClick)="onRegister()">
+        </dx-button>
+    </div>
+</div>
