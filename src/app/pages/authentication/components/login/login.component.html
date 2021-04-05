@@ -1,3 +1,9 @@
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+</head>
+
 <div class="body">
   <div class="form">
     <h1 class="form_title">Log In</h1>
@@ -7,7 +13,7 @@
     </h2>
     <div class="form_group">
       <label class="form_label">Email</label>
-      <dx-text-box class="form_input" [(value)]="user.email">
+      <dx-text-box [(value)]="user.email">
         <dx-validator (onValidated)="onValidatedEmail($event.isValid)">
           <dxi-validation-rule type="required" message="Email is required">
           </dxi-validation-rule>
@@ -18,24 +24,26 @@
     </div>
     <div class="form_group">
       <label class="form_label">Password</label>
-      <dx-text-box class="form_input" mode="password" [(value)]="user.password">
+      <dx-text-box mode="password" [(value)]="user.password">
         <dx-validator (onValidated)="onValidatedPassword($event.isValid)">
           <dxi-validation-rule type="required" message="Password is required">
           </dxi-validation-rule>
         </dx-validator>
       </dx-text-box>
-    </div>
+    
     <h2 class="form_title_h2_left">
       <a href="#" (click)="onForgotPassword()" onclick="return false;">
         Forgot password?
       </a>
     </h2>
+    
     <dx-button
-      class="form_button"
+      
       [disabled]="!isDisabled"
       text="Log In"
       (onClick)="onLogIn()"
     >
     </dx-button>
+  </div>
   </div>
 </div>

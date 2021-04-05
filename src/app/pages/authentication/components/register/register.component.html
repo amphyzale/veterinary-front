@@ -1,9 +1,15 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+</head>
+
 <div class="body">
     <div class="form">
         <h1 class="form_title">Sign Up</h1>
         <div>
-            <h2>Credentials</h2>
             <div class="form_group">
+                <h2 class="form_title_h2_left">Credentials</h2>
                 <label class="form_label">Email</label>
                 <dx-text-box class="form_input" placeholder="Enter email" [(value)]="user.email">
                     <dx-validator (onValidated)="onValidatedEmail($event.isValid)">
@@ -48,8 +54,8 @@
             </div>
         </div>
         <div>
-            <h2>Personal Data</h2>
             <div class="form_group">
+                <h2 class="form_title_h2_left">Personal Data</h2>
                 <label class="form_label">Last name</label>
                 <dx-text-box class="form_input" placeholder="Enter last name" [(value)]="user.lastName">
                     <dx-validator (onValidated)="onValidatedLastName($event.isValid)">
@@ -72,9 +78,11 @@
             </div>
             <div class="form_group">
                 <!-- надо добавить заголовок label не каатит, не совместимость классов -->
+                <div class="dx-field-label">Enter gender</div>
                 <dx-select-box placeholder="Enter gender" [(value)]="user.gender" [dataSource]="genders">
                 </dx-select-box>
             </div>
+
             <div class="form_group">
                 <dx-date-box [(value)]="user.birthDate" [displayFormat]="dateTimeFormat"
                     invalidDateMessage="The date must have the following format: MM/dd/yyyy">
@@ -86,7 +94,9 @@
                 </dx-date-box>
             </div>
         </div>
-        <dx-button class="form_button" text="Sign Up" [disabled]="!isDisabled" (onClick)="onRegister()">
-        </dx-button>
+        <div class="form_group">
+            <dx-button class="form_button" text="Sign Up" [disabled]="!isDisabled" (onClick)="onRegister()">
+            </dx-button>
+        </div>
     </div>
 </div>
