@@ -11,10 +11,12 @@ import { HomeModule } from './pages/home/home.module';
 import { LoginModule } from './pages/authentication/components/login/login.module';
 import { RegisterModule } from './pages/authentication/components/register/register.module';
 import { ForgotPasswordModule } from './pages/authentication/components/forgot-password/forgot-password.module';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
