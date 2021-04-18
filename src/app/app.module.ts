@@ -12,11 +12,20 @@ import { LoginModule } from './pages/authentication/components/login/login.modul
 import { RegisterModule } from './pages/authentication/components/register/register.module';
 import { ForgotPasswordModule } from './pages/authentication/components/forgot-password/forgot-password.module';
 import { AboutComponent } from './pages/about/about.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { ServiceComponent } from './pages/service/service.component';
+import { AdminModule } from './admin/admin.module';
+import { ServiceElementComponent } from './shared/components/service-element/service-element.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent
+    AboutComponent,
+    ServicesComponent,
+    ServiceComponent,
+    ServiceElementComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +35,8 @@ import { AboutComponent } from './pages/about/about.component';
     LoginModule,
     HomeModule,
     RegisterModule,
-    ForgotPasswordModule
+    ForgotPasswordModule,
+    AdminModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
