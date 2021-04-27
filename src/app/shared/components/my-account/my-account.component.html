@@ -1,0 +1,60 @@
+<h2 class="text_green">My Account</h2>
+<p>View and edit your personal info below</p>
+
+<hr class="hr-line">
+
+<div>
+    <div class="info_left">
+        <div>
+            <p>First Name</p>
+            <div class="user_data">
+                <p class="p_info">First Name</p>
+            </div>
+        </div>
+
+        <div>
+            <p>Email</p>
+            <div class="user_data">
+                <p class="p_info">Email</p>
+            </div>
+        </div>
+
+        <div>
+            <p>Login</p>
+            <div class="user_data">
+                <p class="p_info">Login</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info_right">
+        <div>
+            <p>Last Name</p>
+            <div class="user_data">
+                <p class="p_info">Last Name</p>
+            </div>
+        </div>
+
+        <div>
+            <p>Phone</p>
+            <div class="user_data">
+                <p class="p_info">Phone</p>
+            </div>
+        </div>
+
+        <div>
+            <p>Password</p>
+            <div class="user_data">
+                <p class="p_info">Password</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+</div>
+
+<button mat-raised-button (click)="openDialog()">Update</button>
+<li *ngIf="info">
+    You chose: <i>{{info}}</i>
+</li>

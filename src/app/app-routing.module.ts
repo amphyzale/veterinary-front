@@ -8,6 +8,9 @@ import { ForgotPasswordComponent } from './pages/authentication/components/forgo
 import { AboutComponent } from './pages/about/about.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { ServiceComponent } from './pages/service/service.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { MyAccountComponent } from './shared/components/my-account/my-account.component';
+import { ChatComponent } from './shared/components/chat/chat.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,13 +21,18 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'services', component: ServicesComponent},
   { path: 'service/:id', component: ServiceComponent},
-  { path: 'admin', loadChildren: './admin/admin.module#AdminModule'}
+  { path: 'admin', loadChildren: './admin/admin.module#AdminModule'},
+  { path: 'profile', component: ProfileComponent, children: [
+    { path: 'my-account', component: MyAccountComponent},
+    { path: 'chat', component: ChatComponent}
+  ]}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules
-  })],
+    preloadingStrategy: PreloadAllModules,
+    relativeLinkResolution: 'legacy'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
