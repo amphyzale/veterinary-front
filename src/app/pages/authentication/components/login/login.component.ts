@@ -21,8 +21,11 @@ export class LoginComponent {
   constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
   onLogIn() {
+    
     this.authenticationService.login(this.user)
       .subscribe(_ => this.router.navigate(['']));
+      console.log(this.user.email)
+    //window.location.reload();  
   }
 
   onValidatedEmail(isValid: boolean) {

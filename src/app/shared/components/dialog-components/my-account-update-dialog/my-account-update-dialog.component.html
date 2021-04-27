@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Update personal info</h1>
+<div mat-dialog-content>
+
+    <!--<label class="form_label">First name</label>
+    <dx-text-box class="form_input" placeholder="Enter first name" [(ngModel)]="data.firstName">
+        <dx-validator (onValidated)="onValidatedFirstName($event.isValid)">
+            <dxi-validation-rule type="required" message="First name is required"></dxi-validation-rule>
+        </dx-validator>
+    </dx-text-box>-->
+
+  <p>Name</p>
+  <mat-form-field>
+    <mat-label>Your mane</mat-label>
+    <input matInput [(ngModel)]="data.info">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.info" cdkFocusInitial>Ok</button>
+</div>
