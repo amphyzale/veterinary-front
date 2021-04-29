@@ -46,7 +46,7 @@ export class RegisterComponent {
   validatedFirstName: boolean;
 
   constructor(private authenticationService: AuthenticationService) {
-    this.maxDate = new Date(this.maxDate.setFullYear(this.maxDate.getFullYear() - 18));
+    this.maxDate = new Date(this.maxDate.setFullYear(this.maxDate.getFullYear()-18));
     this.user = {
       email: '',
       password: '',

@@ -1,16 +1,15 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { UserLoginInfo } from '../../models/authentication.model';
-import { AuthenticationService } from '../../shared/authentication.service';
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
+import { UserLoginInfo } from "../../models/authentication.model";
+import { AuthenticationService } from "../../shared/authentication.service";
 
 @Component({
-  selector: 'login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.less']
+  selector: "login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.less"],
 })
 export class LoginComponent {
-
-  user: UserLoginInfo = { email: '', password: '' };
+  user: UserLoginInfo = { email: "", password: "" };
 
   isDisabled: boolean;
 
@@ -18,11 +17,15 @@ export class LoginComponent {
 
   validatedPassword: boolean;
 
-  constructor(private authenticationService: AuthenticationService, private router: Router) { }
+  constructor(
+    private authenticationService: AuthenticationService,
+    private router: Router
+  ) {}
 
   onLogIn() {
-    this.authenticationService.login(this.user)
-      .subscribe(_ => this.router.navigate(['']));
+    this.authenticationService
+      .login(this.user)
+      .subscribe((_) => this.router.navigate([""]));
   }
 
   onValidatedEmail(isValid: boolean) {
@@ -36,11 +39,11 @@ export class LoginComponent {
   }
 
   onForgotPassword() {
-    this.router.navigate(['forgot-password']);
+    this.router.navigate(["forgot-password"]);
   }
 
-  onSignUp(){
-    this.router.navigate(['register']);
+  onSignUp() {
+    this.router.navigate(["register"]);
   }
 
   private validate() {
