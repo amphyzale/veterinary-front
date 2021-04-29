@@ -1,7 +1,10 @@
 <head>
-  <meta charset="UTF-8">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap"
+    rel="stylesheet"
+  />
 </head>
 
 <div class="body">
@@ -30,20 +33,15 @@
           </dxi-validation-rule>
         </dx-validator>
       </dx-text-box>
-    
-    <h2 class="form_title_h2_left">
-      <a href="#" (click)="onForgotPassword()" onclick="return false;">
-        Forgot password?
-      </a>
-    </h2>
-    
-    <dx-button
-      
-      [disabled]="!isDisabled"
-      text="Log In"
-      (onClick)="onLogIn()"
-    >
-    </dx-button>
-  </div>
+
+      <h2 class="form_title_h2_left">
+        <a href="#" (click)="onForgotPassword()" onclick="return false;">
+          Forgot password?
+        </a>
+      </h2>
+
+      <dx-button [disabled]="!isDisabled" text="Log In" (onClick)="onLogIn()">
+      </dx-button>
+    </div>
   </div>
 </div>

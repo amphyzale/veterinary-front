@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+// import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,12 +12,18 @@ import { HomeModule } from './pages/home/home.module';
 import { LoginModule } from './pages/authentication/components/login/login.module';
 import { RegisterModule } from './pages/authentication/components/register/register.module';
 import { ForgotPasswordModule } from './pages/authentication/components/forgot-password/forgot-password.module';
-import { AboutComponent } from './pages/about/about.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServicesModule } from './pages/services/services.module';
+import { AboutModule } from './pages/about/about.module';
+import { ProfileModule } from './pages/profile/profile.module';
+import { ChatModule } from './shared/components/chat/chat.module';
+//import { MyAccountUpdateDialogModule } from './shared/components/dialog-components/my-account-update-dialog/my-account-update-dialog.module';
+
+// здесь импорты только модулей сначала создается модуль ng g m blablabla затем уже ng g c blablabla в том терминале
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AboutComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -26,9 +33,14 @@ import { AboutComponent } from './pages/about/about.component';
     LoginModule,
     HomeModule,
     RegisterModule,
-    ForgotPasswordModule
+    ForgotPasswordModule,
+    BrowserAnimationsModule,
+    ServicesModule,
+    AboutModule,
+    ProfileModule,
+    ChatModule
   ],
   providers: [authInterceptorProviders],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

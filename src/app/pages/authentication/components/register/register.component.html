@@ -78,8 +78,8 @@
             </div>
             <div class="form_group">
                 <!-- надо добавить заголовок label не каатит, не совместимость классов -->
-                <div class="dx-field-label">Enter gender</div>
-                <dx-select-box placeholder="Enter gender" [(value)]="user.gender" [dataSource]="genders">
+                <!--<div class="dx-field-label">Enter gender</div>-->
+                <dx-select-box [(value)]="user.gender" [dataSource]="genders">
                 </dx-select-box>
             </div>
 
@@ -88,8 +88,8 @@
                     invalidDateMessage="The date must have the following format: MM/dd/yyyy">
                     <dx-validator>
                         <dxi-validation-rule type="required" message="Date of birth is required"></dxi-validation-rule>
-                        <dxi-validation-rule type="range" [max]="maxDate" message="You must be at least 18 years old">
-                        </dxi-validation-rule>
+                        <!-- <dxi-validation-rule type="range" [max]="maxDate" message="You must be at least 18 years old">
+                        </dxi-validation-rule> -->
                     </dx-validator>
                 </dx-date-box>
             </div>

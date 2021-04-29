@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
-import { ApiHelperService } from './helpers/api-hepler.service';
-import { TokenStorageService } from './helpers/token-storage.service';
-import { AuthenticationService } from './pages/authentication/shared/authentication.service';
+import { Component } from "@angular/core";
+import { ApiHelperService } from "./helpers/api-hepler.service";
+import { TokenStorageService } from "./helpers/token-storage.service";
+import { AuthenticationService } from "./pages/authentication/shared/authentication.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less'],
-  providers: [ApiHelperService, AuthenticationService]
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.less"],
+  providers: [ApiHelperService, AuthenticationService],
 })
 export class AppComponent {
+  title: string;
 
   private roles: string[] = [];
 
@@ -19,11 +20,22 @@ export class AppComponent {
 
   showModeratorBoard = false;
 
-  username: string = '';
+  username: string = "";
 
-  constructor(private tokenStorageService: TokenStorageService) { }
+  constructor(
+    private tokenStorageService: TokenStorageService,
+    private authService: AuthenticationService
+  ) {
+    this.authService.observeLogIn().subscribe((_) => {
+      this.loggedInCheck();
+    });
+  }
 
   ngOnInit() {
+    this.loggedInCheck();
+  }
+
+  loggedInCheck() {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
@@ -31,7 +43,7 @@ export class AppComponent {
       this.roles = user.roles;
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      //this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
 
       this.username = user.username;
     }
@@ -39,6 +51,6 @@ export class AppComponent {
 
   logout() {
     this.tokenStorageService.signOut();
-    window.location.reload();
+    this.loggedInCheck();
   }
 }
