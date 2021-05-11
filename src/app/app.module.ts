@@ -17,13 +17,19 @@ import { ServicesModule } from './pages/services/services.module';
 import { AboutModule } from './pages/about/about.module';
 import { ProfileModule } from './pages/profile/profile.module';
 import { ChatModule } from './shared/components/chat/chat.module';
+import { MyProfileComponent } from './pages/my-profile/my-profile.component';
+import { AccountComponent } from './pages/my-profile/components/account/account.component';
+import { AdminDoctorsComponent } from './pages/my-profile/components/admin-doctors/admin-doctors.component';
 //import { MyAccountUpdateDialogModule } from './shared/components/dialog-components/my-account-update-dialog/my-account-update-dialog.module';
 
 // здесь импорты только модулей сначала создается модуль ng g m blablabla затем уже ng g c blablabla в том терминале
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MyProfileComponent,
+    AccountComponent,
+    AdminDoctorsComponent
   ],
   imports: [
     BrowserModule,

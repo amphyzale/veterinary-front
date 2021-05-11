@@ -11,6 +11,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { MyAccountComponent } from './pages/profile/components/my-account/my-account.component';
 import { ChatComponent } from './shared/components/chat/chat.component';
 import { ServiceComponent } from './pages/services/components/service/service.component';
+import { MyProfileComponent } from './pages/my-profile/my-profile.component';
+import { AccountComponent } from './pages/my-profile/components/account/account.component';
+import { AdminDoctorsComponent } from './pages/my-profile/components/admin-doctors/admin-doctors.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,6 +27,11 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, children: [
     { path: 'my-account', component: MyAccountComponent},
     { path: 'chat', component: ChatComponent}
+  ]},
+  {path: 'my-profile', component: MyProfileComponent, children: [
+    { path: 'account', component: AccountComponent},
+    { path: 'chat', component: ChatComponent},
+    { path: 'admin-doctors', component: AdminDoctorsComponent}
   ]}
 ];
 

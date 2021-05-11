@@ -10,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './my-account.component.html',
   styleUrls: ['./my-account.component.less']
 })
-export class MyAccountComponent /*implements OnInit */{
+export class MyAccountComponent implements OnInit {
 
-  info: string;
+  //info: string;
   /*firstName: string;
   last_name: string;
   email: string;
@@ -20,7 +20,7 @@ export class MyAccountComponent /*implements OnInit */{
   login: string;
   password: string;*/
 
-  // constructor(public dialog: MatDialog) { }
+  constructor() { }
 
   // openDialog(): void {
   //   const dialogRef = this.dialog.open(MyAccountUpdateDialogComponent, {
@@ -47,6 +47,6 @@ export class MyAccountComponent /*implements OnInit */{
   //     this.password = result;*/
   //   });
 
-  // //ngOnInit(): void {
-  // }
+  ngOnInit(): void {
+  }
 }

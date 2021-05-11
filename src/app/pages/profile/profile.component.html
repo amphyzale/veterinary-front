@@ -17,14 +17,14 @@
 
       <div class="functionality">
         <!--user functionality here-->
-        <button class="btn" (click)="goToMyAccount()">My Account</button>
+        <button class="btn" [routerLink]="['/profile', 'my-account']">My Account</button>
         <button class="btn" (click)="goToChat()">Chat</button>
       </div>
     </div>
 
     <div class="clear-fix">
-      <div class="container">
-        <!-- <router-outlet></router-outlet> -->
+      <div class="container11">
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>
