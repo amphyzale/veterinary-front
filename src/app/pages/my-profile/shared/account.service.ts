@@ -4,14 +4,12 @@ import { ApiHelperService } from 'src/app/helpers/api-hepler.service';
 import { Observable } from 'rxjs';
 
 export interface UserProfile {
-    FirstName: string;
-    LastName: string;
-    UserPic: string;
-    BirthDate: string;
-    Email: string;
-    Phone: string;
-    login: string;
-    password: string;
+  firstName: string;
+  lastName: string;
+  userPic: string;
+  email: string;
+  phone: string;
+  login: string;
 }
 
 /*let userInfo: UserInfo = {
@@ -37,18 +35,20 @@ const METHOD_GET_PROFILE = "/users/profile";
 /** сервис для получения профиля из апи */
 @Injectable()
 export class AccountService {
-    /*private httpOption = {
-        headers: new HttpHeaders({
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "application/json",
-        }),
-      };*/
+
+  private httpOption = {
+    headers: new HttpHeaders({
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+    }),
+  };
 
   constructor(private http: HttpClient, private apiHelper: ApiHelperService) {}
 
   getProfile(): Observable<UserProfile> {
     return this.http.get<UserProfile>(
-      this.apiHelper.getUrl(METHOD_GET_PROFILE)//, this.httpOption
+      this.apiHelper.getUrl(METHOD_GET_PROFILE),
+      this.httpOption
     );
   }
 }

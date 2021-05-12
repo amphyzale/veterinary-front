@@ -16,19 +16,17 @@ export class AccountComponent implements OnInit {
 
 //пример с сайта https://js.devexpress.com/Demos/WidgetsGallery/Demo/Popup/Overview/Angular/Light/
 
-import { Component, NgModule, enableProdMode } from '@angular/core';
-import { DxPopupModule, DxButtonModule, DxTemplateModule, DxTextBoxModule, DxScrollViewModule } from 'devextreme-angular';
-import { UserProfile, AccountService } from '../../shared/account.service';
-import notify from 'devextreme/ui/notify';
+import { Component } from "@angular/core";
+import { UserProfile, AccountService } from "../../shared/account.service";
 
 @Component({
-  selector: 'app-account',
-  templateUrl: './account.component.html',
-  styleUrls: ['./account.component.less'],
-  providers: [AccountService]
+  selector: "app-account",
+  templateUrl: "./account.component.html",
+  styleUrls: ["./account.component.less"],
+  providers: [AccountService],
 })
-
 export class AccountComponent {
+  
   userProfile: UserProfile;
   popupVisible = false;
   updateButtonOptions: any;
@@ -36,8 +34,10 @@ export class AccountComponent {
   positionOf: string;
 
   constructor(public service: AccountService) {
-    this.service.getProfile().subscribe(info => {this.userProfile = info;});
-      /*this.userInfo = service.getUserInfo();
+    this.service.getProfile().subscribe((info) => {
+      this.userProfile = info;
+    });
+    /*this.userInfo = service.getUserInfo();
       this.updateButtonOptions = {
           text: "Save",
           onClick: function(e) {
@@ -51,7 +51,7 @@ export class AccountComponent {
             }, "success", 3000);
           }
       };*/
-      /*this.closeButtonOptions = {
+    /*this.closeButtonOptions = {
           text: "Close",
           onClick: function(e) {
               that.popupVisible = false;
@@ -66,17 +66,3 @@ export class AccountComponent {
       this.popupVisible = true;
   }*/
 }
-
-@NgModule({
-  imports: [
-      DxPopupModule,
-      DxButtonModule,
-      DxTemplateModule,
-      DxTextBoxModule,
-      DxScrollViewModule
-  ],
-  declarations: [AccountComponent],
-  bootstrap: [AccountComponent]
-})
-
-export class AccountModule { }
