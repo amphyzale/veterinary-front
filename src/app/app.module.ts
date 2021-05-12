@@ -20,17 +20,15 @@ import { ChatModule } from './shared/components/chat/chat.module';
 import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 import { AccountComponent } from './pages/my-profile/components/account/account.component';
 import { AdminDoctorsComponent } from './pages/my-profile/components/admin-doctors/admin-doctors.component';
+import { MyProfileModule } from './pages/my-profile/my-profile.module';
+import { AccountModule } from './pages/my-profile/components/account/account.module';
+import { AdminDoctorsModule } from './pages/my-profile/components/admin-doctors/admin-doctors.module';
 //import { MyAccountUpdateDialogModule } from './shared/components/dialog-components/my-account-update-dialog/my-account-update-dialog.module';
 
 // здесь импорты только модулей сначала создается модуль ng g m blablabla затем уже ng g c blablabla в том терминале
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MyProfileComponent,
-    AccountComponent,
-    AdminDoctorsComponent
-  ],
+  declarations: [AppComponent], // здесь недолжно быть других деклеров онли appcomponent
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -44,7 +42,10 @@ import { AdminDoctorsComponent } from './pages/my-profile/components/admin-docto
     ServicesModule,
     AboutModule,
     ProfileModule,
-    ChatModule
+    ChatModule,
+    MyProfileModule,
+    AccountModule,
+    AdminDoctorsModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

@@ -1,31 +1,28 @@
 <head>
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap"
-    rel="stylesheet"
-  />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet" />
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-  <div class="profile_container">
-    <div class="profile_menu">
-      <div class="avatar">
-        <!--user avatar here-->
-        <p>*photo*</p>
-        <p>Username</p>
-      </div>
+    <div class="profile_container">
+        <div class="profile_menu">
+            <div class="avatar">
+                <!--user avatar here-->
+                <p>*photo*</p>
+                <p>Username</p>
+            </div>
 
-      <div class="functionality">
-        <!--user functionality here-->
-        <button class="btn" [routerLink]="['/profile', 'my-account']">My Account</button>
-        <button class="btn" (click)="goToChat()">Chat</button>
-      </div>
-    </div>
+            <div class="functionality">
+                <!--user functionality here-->
+                <!-- <button class="btn" [routerLink]="['/profile', 'my-account']">My Account</button> у кнопки нет routerLink -->
+                <button class="btn" (click)="goToChat()">Chat</button>
+            </div>
+        </div>
 
-    <div class="clear-fix">
-      <div class="container11">
-        <router-outlet></router-outlet>
-      </div>
+        <div class="clear-fix">
+            <div class="container11">
+                <!-- <router-outlet></router-outlet> -->
+            </div>
+        </div>
     </div>
-  </div>
 </body>

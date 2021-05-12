@@ -11,6 +11,6 @@ import { AccountComponent } from "./account.component";
     DxScrollViewModule,
   ],
   declarations: [AccountComponent],
-  bootstrap: [AccountComponent],
+  exports: [AccountComponent],
 })
 export class AccountModule {}

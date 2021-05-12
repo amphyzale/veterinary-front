@@ -28,17 +28,10 @@ export class AdminDoctorsComponent {
     dataSource: Doctor[];
     //states: State[];
 
-    constructor(service: Service) {
-        this.dataSource = service.getDoctors();
+    constructor(private service: Service) {
+        this.dataSource = this.service.getDoctors();
         //this.states = service.getStates();
     }
 }
 
-@NgModule({
-    imports: [
-        DxDataGridModule
-    ],
-    declarations: [AdminDoctorsComponent],
-    bootstrap: [AdminDoctorsComponent]
-})
-export class AdminDoctorsModule { }
+
