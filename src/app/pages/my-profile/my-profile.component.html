@@ -1,0 +1,24 @@
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <div class="profile_container">
+      <div class="profile_menu">
+        <div class="avatar">
+          <!--user avatar here-->
+          <p>*photo*</p>
+          <p>Username</p>
+        </div>
+  
+        <div class="functionality">
+          <!--user functionality here-->
+          <button class="btn" (click)="goToAccount()">My Account</button>
+          <button class="btn" (click)="goToDoctors()">Doctors</button>
+          <button class="btn" (click)="goToChat()">Chat</button>
+        </div>
+      </div>
+
+      <div class="clear-fix">
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+</body>
