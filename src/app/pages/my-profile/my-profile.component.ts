@@ -21,6 +21,10 @@ export class MyProfileComponent implements OnInit {
     this.router.navigate(["/my-profile", "admin-doctors"]);
   }
 
+  goToUsers() {
+    this.router.navigate(["/my-profile", "admin-users"]);
+  }
+
   goToChat() {
     this.router.navigate(["/my-profile", "chat"]);
   }

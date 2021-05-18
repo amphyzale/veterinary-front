@@ -6,31 +6,16 @@ import { Observable } from 'rxjs';
 export interface UserProfile {
   firstName: string;
   lastName: string;
-  userPic: string;
+  patronymic: string;
+  userPic?: string;
   email: string;
   phone: string;
-  login: string;
+  locale: string;
+  gender: string;
 }
 
-/*let userInfo: UserInfo = {
-    "FirstName": "Kate",
-    "LastName": "Maltceva",
-    "UserPic": "#",
-    "BirthDate": "1974/11/15",
-    "Email": "maltceva@gmail.com",
-    "Phone": "89000000000",
-    "login": "maltceva@gmail.com",
-    "password": "123"
-};*/
-
-/*@Injectable()
-export class Service {
-    getUserInfo(): UserInfo {
-        return userInfo;
-    }
-}*/
-
 const METHOD_GET_PROFILE = "/users/profile";
+const METHOD_UPDATE_PROFILE = "/users/update_profile";
 
 /** сервис для получения профиля из апи */
 @Injectable()
@@ -43,12 +28,23 @@ export class AccountService {
     }),
   };
 
-  constructor(private http: HttpClient, private apiHelper: ApiHelperService) {}
+  constructor(private http: HttpClient, private apiHelper: ApiHelperService) { }
 
   getProfile(): Observable<UserProfile> {
     return this.http.get<UserProfile>(
       this.apiHelper.getUrl(METHOD_GET_PROFILE),
       this.httpOption
     );
+  }
+
+  updateProfile(profileInfo: UserProfile): Observable<void> {
+    const body = { ...profileInfo};
+    //body.gender = body.gender.toUpperCase();
+    return this.http
+      .patch<any>(
+        this.apiHelper.getUrl(METHOD_UPDATE_PROFILE),
+        body,
+        this.httpOption
+      );
   }
 }

@@ -15,16 +15,18 @@
         </div>
 
         <div>
-            <p>Email</p>
+            <p>Patronymic</p>
             <div class="user_data">
-                <p class="p_info">{{ userProfile?.email }}</p>
+                <p class="p_info">
+                    {{ userProfile?.patronymic }}
+                </p>
             </div>
         </div>
 
         <div>
-            <p>Login</p>
+            <p>Phone</p>
             <div class="user_data">
-                <p class="p_info">{{ userProfile?.login }}</p>
+                <p class="p_info">{{ userProfile?.phone }}</p>
             </div>
         </div>
     </div>
@@ -38,52 +40,51 @@
         </div>
 
         <div>
-            <p>Phone</p>
+            <p>Email</p>
             <div class="user_data">
-                <p class="p_info">{{ userProfile?.phone }}</p>
+                <p class="p_info">{{ userProfile?.email }}</p>
             </div>
         </div>
-
     </div>
 
-    <!-- <dx-button class="button-info" text="Update" (mouseenter)="detailsButtonMouseEnter(userInfo)" (onClick)="showInfo(userInfo)">
-    </dx-button> -->
+    <div>
+        <dx-button class="button-info" text="Update" (mouseenter)="detailsButtonMouseEnter()"
+            (onClick)="showInfo(userProfile)">
+        </dx-button>
+    </div>
 
-    <!-- <dx-popup [width]="500" [height]="400" [showTitle]="true" title="About Me" [dragEnabled]="false" [closeOnOutsideClick]="true" [showCloseButton]="false" container=".dx-viewport" [(visible)]="popupVisible">
+    <dx-popup [width]="500" [height]="400" [showTitle]="true" title="About Me" [dragEnabled]="false"
+        [closeOnOutsideClick]="true" [showCloseButton]="false" container=".dx-viewport" [(visible)]="popupVisible">
         <dxi-toolbar-item widget="dxButton" toolbar="bottom" location="before" [options]="updateButtonOptions">
         </dxi-toolbar-item>
         <dxi-toolbar-item widget="dxButton" toolbar="bottom" location="after" [options]="closeButtonOptions">
         </dxi-toolbar-item>
         <dxo-position at="center">
             <dxo-at x="center" y="center"></dxo-at>
-        </dxo-position> -->
-    <!-- <div *dxTemplate="let data of 'content'">
-                <dx-scroll-view width="100%" height="100%">
+        </dxo-position>
+        <div *dxTemplate="let data of 'content'">
+            <dx-scroll-view width="100%" height="100%">
                 <p class="p_info">
                     First Name:
                 </p>
-                <dx-text-box placeholder={{userInfo.FirstName}} [(value)]="userInfo.FirstName"></dx-text-box>
+                <dx-text-box placeholder={{userProfile?.firstName}} [(value)]="userProfile.firstName"></dx-text-box>
                 <p class="p_info">
                     Last Name:
                 </p>
-                <dx-text-box placeholder={{userInfo.LastName}} [(value)]="userInfo.LastName"></dx-text-box>
+                <dx-text-box placeholder={{userProfile?.lastName}} [(value)]="userProfile.lastName"></dx-text-box>
+                <p class="p_info">
+                    Patronymic:
+                </p>
+                <dx-text-box placeholder={{userProfile?.patronymic}} [(value)]="userProfile.patronymic"></dx-text-box>
                 <p class="p_info">
                     Email:
                 </p>
-                <dx-text-box placeholder={{userInfo.Email}} [(value)]="userInfo.Email"></dx-text-box>
+                <dx-text-box placeholder={{userProfile?.email}} [(value)]="userProfile.email"></dx-text-box>
                 <p class="p_info">
                     Phone:
                 </p>
-                <dx-text-box placeholder={{userInfo.Phone}} [(value)]="userInfo.Phone"></dx-text-box>
-                <p class="p_info">
-                    Login:
-                </p>
-                <dx-text-box placeholder={{userInfo.login}} [(value)]="userInfo.login"></dx-text-box>
-                <p class="p_info">
-                    Password:
-                </p>
-                <dx-text-box placeholder={{userInfo.password}} [(value)]="userInfo.password" mode="password"></dx-text-box>
+                <dx-text-box placeholder={{userProfile?.phone}} [(value)]="userProfile.phone"></dx-text-box>
             </dx-scroll-view>
-            </div> -->
-    <!-- </dx-popup> -->
+        </div>
+    </dx-popup>
 </div>

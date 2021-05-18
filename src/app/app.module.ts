@@ -23,6 +23,7 @@ import { AdminDoctorsComponent } from './pages/my-profile/components/admin-docto
 import { MyProfileModule } from './pages/my-profile/my-profile.module';
 import { AccountModule } from './pages/my-profile/components/account/account.module';
 import { AdminDoctorsModule } from './pages/my-profile/components/admin-doctors/admin-doctors.module';
+import { AdminUsersModule } from './pages/my-profile/components/admin-users/admin-users.module';
 //import { MyAccountUpdateDialogModule } from './shared/components/dialog-components/my-account-update-dialog/my-account-update-dialog.module';
 
 // здесь импорты только модулей сначала создается модуль ng g m blablabla затем уже ng g c blablabla в том терминале
@@ -46,6 +47,7 @@ import { AdminDoctorsModule } from './pages/my-profile/components/admin-doctors/
     MyProfileModule,
     AccountModule,
     AdminDoctorsModule,
+    AdminUsersModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
