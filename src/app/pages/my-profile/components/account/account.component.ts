@@ -49,7 +49,7 @@ export class AccountComponent {
       //gender: this.genders[0],
       gender: ''
     };
-    this.service.getProfile().subscribe((info) => {  
+    this.service.getProfile().subscribe((info) => {
       this.userProfile.firstName = info.firstName;
       this.userProfile.lastName = info.lastName;
       this.userProfile.patronymic = info.patronymic;
@@ -57,39 +57,60 @@ export class AccountComponent {
       this.userProfile.email = info.email;
       this.userProfile.phone = info.phone;
       this.userProfile.locale = info.locale;
-      this.userProfile.gender = info.gender;  
+      this.userProfile.gender = info.gender;
     });
 
     //const that = this;
-    this.updateButtonOptions = {
-      text: "Save",
-      onClick: function (e) {
-        //тут нужно отправлять запрос
-        console.log(this.userProfile);
-        this.service.updateProfile(this.userProfile);
-
-        const message = `Updated data for ${this.userProfile.firstName} ${this.userProfile.lastName}`;
-        notify({
-          message: message,
-          position: {
-            my: "center top",
-            at: "center top"
-          }
-        }, "success", 3000);
-      }
-    };
-    this.closeButtonOptions = {
+    /* this.updateButtonOptions = {
+       text: "Save",
+       onClick: function (e) {
+         //тут нужно отправлять запрос
+         console.log(this.userProfile);
+         this.service.updateProfile(this.userProfile);
+ 
+         const message = `Updated data for ${this.userProfile.firstName} ${this.userProfile.lastName}`;
+         notify({
+           message: message,
+           position: {
+             my: "center top",
+             at: "center top"
+           }
+         }, "success", 3000);
+       }
+     };*/
+    /*this.closeButtonOptions = {
       text: "Close",
       onClick: function (e) {
         this.popupVisible = false;
       }
-    };
+    };*/
   }
+
+  closePopup(){
+    this.popupVisible = false;
+  }
+
   detailsButtonMouseEnter() {
     this.positionOf = ``;
   }
   showInfo(userProfile) {
     this.userProfile = userProfile;
     this.popupVisible = true;
+  }
+
+  updateUserProfile() {
+    //тут нужно отправлять запрос
+    console.log(this.userProfile);
+    this.service.updateProfile(this.userProfile).subscribe((response) => {
+      console.log('response', response)
+    });
+    const message = `Updated data for ${this.userProfile.firstName} ${this.userProfile.lastName}`;
+         notify({
+           message: message,
+           position: {
+             my: "center top",
+             at: "center top"
+           }
+         }, "success", 3000);
   }
 }

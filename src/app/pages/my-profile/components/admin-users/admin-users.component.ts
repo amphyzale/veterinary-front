@@ -26,12 +26,31 @@ import { User, UsersService } from "../../shared/admin-users.service";
 })
 export class AdminUsersComponent {
 
+  /*id: number = 2;
+  email: string = 'maltceva@gmail.com';*/
+
+  searchQuery: string = '';
+
   dataSource: User[];
 
   constructor(private service: UsersService) {
+    /*this.service.getAllUsers().subscribe((users) => {
+      this.dataSource = users;
+    });*/
+    this.getAllUsers();
+  }
+
+  getAllUsers(){
     this.service.getAllUsers().subscribe((users) => {
       this.dataSource = users;
     });
-}
+  }
+
+  findAnyUser() {
+    //тут нужно отправлять запрос
+    this.service.findUser(this.searchQuery).subscribe((users) => {
+      this.dataSource = users;
+    });
+  }
 }
 
