@@ -55,9 +55,15 @@
 
     <dx-popup [width]="500" [height]="400" [showTitle]="true" title="About Me" [dragEnabled]="false"
         [closeOnOutsideClick]="true" [showCloseButton]="false" container=".dx-viewport" [(visible)]="popupVisible">
-        <dxi-toolbar-item widget="dxButton" toolbar="bottom" location="before" [options]="updateButtonOptions">
+        <!--<dxi-toolbar-item toolbar="bottom" location="before" class="btn" (click)="updateUserProfile()">Save
+        </dxi-toolbar-item>-->
+        <dxi-toolbar-item toolbar="bottom" location="before">
+            <button class="btn" (click)="updateUserProfile()">Save</button>
         </dxi-toolbar-item>
-        <dxi-toolbar-item widget="dxButton" toolbar="bottom" location="after" [options]="closeButtonOptions">
+        <!--<dxi-toolbar-item widget="dxButton" toolbar="bottom" location="after" (click)="closePopup()">
+        </dxi-toolbar-item>-->
+        <dxi-toolbar-item toolbar="bottom" location="after">
+            <button class="btn" (click)="closePopup()">Close</button>
         </dxi-toolbar-item>
         <dxo-position at="center">
             <dxo-at x="center" y="center"></dxo-at>
@@ -85,6 +91,8 @@
                 </p>
                 <dx-text-box placeholder={{userProfile?.phone}} [(value)]="userProfile.phone"></dx-text-box>
             </dx-scroll-view>
+
+            <!--<button class="btn" (click)="updateUserProfile()">Save</button>-->
         </div>
     </dx-popup>
 </div>
