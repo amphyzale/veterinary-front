@@ -1,32 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MyProfileService } from './shared/my-profile.service';
 
 @Component({
   selector: 'app-my-profile',
   templateUrl: './my-profile.component.html',
-  styleUrls: ['./my-profile.component.less']
+  styleUrls: ['./my-profile.component.less'],
+  providers: [MyProfileService]
 })
 export class MyProfileComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  showAccount: boolean;
+
+  showPets: boolean;
+
+  showChat: boolean;
+
+  constructor(private router: Router) {
+    this.showAccount = true;
+  }
 
   ngOnInit(): void {
   }
 
   goToAccount() {
-    this.router.navigate(["/my-profile", "account"]);
+    this.showAccount = true;
+    this.showChat = this.showPets = false;
   }
 
-  goToDoctors() {
-    this.router.navigate(["/my-profile", "admin-doctors"]);
-  }
-
-  goToUsers() {
-    this.router.navigate(["/my-profile", "admin-users"]);
+  goToPets() {
+    this.showAccount = this.showChat = false;
+    this.showPets = true;
   }
 
   goToChat() {
-    this.router.navigate(["/my-profile", "chat"]);
+    this.showAccount = this.showPets = false;
+    this.showChat = true;
   }
 
 }

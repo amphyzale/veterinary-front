@@ -1,13 +1,8 @@
-import * as moment from 'moment';
-
 import { Component } from '@angular/core';
+import { dateTimeFormat } from 'src/app/shared/functions/date-time-format';
 
 import { UserRegisterInfo } from '../../models/authentication.model';
 import { AuthenticationService } from '../../shared/authentication.service';
-
-function dateTimeFormat(value: string): string {
-  return moment(value).format('YYYY-MM-DD')
-}
 
 @Component({
   selector: 'register',

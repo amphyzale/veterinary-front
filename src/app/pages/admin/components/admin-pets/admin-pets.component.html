@@ -1,0 +1,62 @@
+<div id="data-grid-demo">
+  <dx-data-grid id="gridContainer"
+    keyExpr="id"
+    [dataSource]="dataSource"
+    [showBorders]="true">
+
+    <dxo-paging [enabled]="false"></dxo-paging>
+    <dxo-editing mode="popup"
+      [allowAdding]="true"
+      [allowUpdating]="true"
+      [allowDeleting]="true">
+
+      <dxo-popup title="User Info"
+        [showTitle]="true"
+        [width]="700"
+        [height]="'auto'">
+      </dxo-popup>
+      <dxo-form>
+        <dxi-item itemType="group"
+          [colCount]="2"
+          [colSpan]="2">
+          <dxi-item dataField="nickname"></dxi-item>
+          <dxi-item dataField="breed"></dxi-item>
+          <dxi-item dataField="kind"></dxi-item>
+          <dxi-item caption="Owner"
+            dataField="owner.id"></dxi-item>
+          <dxi-item dataField="gender"></dxi-item>
+          <dxi-item dataField="birthDate"></dxi-item>
+        </dxi-item>
+      </dxo-form>
+    </dxo-editing>
+
+    <dxi-column dataField="id"
+      [width]="40">
+    </dxi-column>
+    <dxi-column dataField="petPic"
+      cellTemplate="cellTemplate">
+    </dxi-column>
+    <dxi-column dataField="nickname">
+    </dxi-column>
+    <dxi-column dataField="breed">
+    </dxi-column>
+    <dxi-column dataField="kind">
+    </dxi-column>
+    <dxi-column caption="Owner"
+      dataField="owner.id">
+      <dxo-lookup [dataSource]="users"
+        displayExpr="fio"
+        valueExpr="id">
+      </dxo-lookup>
+    </dxi-column>
+    <dxi-column dataField="gender">
+    </dxi-column>
+    <dxi-column dataField="birthDate"
+      dataType="date"
+      [format]="dateTimeFormat">
+    </dxi-column>
+    <div *dxTemplate="let data of 'cellTemplate'">
+      <img [src]="data.value" />
+    </div>
+  </dx-data-grid>
+</div>

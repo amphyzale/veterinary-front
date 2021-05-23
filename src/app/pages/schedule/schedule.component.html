@@ -1,0 +1,23 @@
+<div>
+  <dx-scroll-view>
+    <dx-scheduler [dataSource]="dataSource"
+      [currentDate]="currentDate"
+      [views]="['week', 'month']"
+      [cellDuration]="60"
+      height="100%"
+      currentView="week"
+      [startDayHour]="9"
+      [endDayHour]="21"
+      [showAllDayPanel]="false"
+      [showCurrentTimeIndicator]="false">
+      <dxo-editing [allowDragging]="false">
+      </dxo-editing>
+      <div *dxTemplate="let data of 'tooltipTemplate'"
+        class="dx-tooltip-appointment-item-content">
+        <!-- {{ vbv }}  -->
+      </div>
+
+    </dx-scheduler>
+
+  </dx-scroll-view>
+</div>

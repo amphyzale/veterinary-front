@@ -1,9 +1,6 @@
 <head>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet" />
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -36,10 +33,7 @@
 
     <div style="border-bottom: solid 30px #f2f2f2"></div>
 
-    <header
-      class="site-navbar js-sticky-header site-navbar-target"
-      role="banner"
-    >
+    <header class="site-navbar js-sticky-header site-navbar-target" role="banner">
       <div class="container_2">
         <span>
           <img class="logo" src="../assets/images/logo.png" />
@@ -54,27 +48,31 @@
             </ul>
             <ul class="navbar-nav mr-auto" routerLinkActive="active">
               <li class="nav-item">
-                <a href="/about" class="nav-link" routerLink="about"
-                  >ABOUT US</a
-                >
+                <a href="/about" class="nav-link" routerLink="about">ABOUT US</a>
               </li>
             </ul>
             <ul class="navbar-nav mr-auto" routerLinkActive="active">
               <li class="nav-item">
-                <a href="/services" class="nav-link" routerLink="services"
-                  >SERVICES</a
-                >
+                <a href="/services" class="nav-link" routerLink="services">SERVICES</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mr-auto" routerLinkActive="active">
+              <li class="nav-item">
+                <a href="/schedule" class="nav-link" routerLink="schedule">SCHEDULE</a>
               </li>
             </ul>
             <ul>
               <li><a href="" class="nav-link">DOCTORS</a></li>
-              <li><a href="" class="nav-link">CONTACT</a></li>
+              <!-- <li><a href="" class="nav-link">CONTACT</a></li> -->
+            </ul>
+            <ul>
+              <li class="nav-item">
+                <a href="/admin" class="nav-link" routerLink="admin">ADMIN PAGE</a>
+              </li>
             </ul>
             <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
               <li class="nav-item">
-                <a href="/register" class="nav-link" routerLink="register"
-                  >Sign Up</a
-                >
+                <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
               </li>
               <li class="nav-item">
                 <a href="/login" class="nav-link" routerLink="login">Log In</a>
@@ -83,9 +81,7 @@
 
             <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
               <li class="nav-item">
-                <a href="/my-profile" class="nav-link" routerLink="my-profile"
-                  >Hi, {{ username }}</a
-                >
+                <a href="/my-profile" class="nav-link" routerLink="my-profile">Hi, {{ username }}</a>
               </li>
               <li class="nav-item">
                 <a href class="nav-link" (click)="logout()">LogOut</a>
@@ -127,12 +123,8 @@
 
           <div class="col_footer">
             <h2 class="footer-heading_h2">Follow Us</h2>
-            <a href="#"
-              ><img class="icon" src="../assets/images/facebook-icon.png"
-            /></a>
-            <a href="#"
-              ><img class="icon" src="../assets/images/instagram-icon.png"
-            /></a>
+            <a href="#"><img class="icon" src="../assets/images/facebook-icon.png" /></a>
+            <a href="#"><img class="icon" src="../assets/images/instagram-icon.png" /></a>
           </div>
         </div>
       </div>

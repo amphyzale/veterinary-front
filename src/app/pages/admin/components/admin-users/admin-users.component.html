@@ -1,0 +1,64 @@
+<div>
+  <div class="search_text-box">
+    <dx-text-box class="s_text-box"
+      placeholder="Enter id or Email/FIO for search"
+      [(value)]="searchQuery">
+    </dx-text-box>
+  </div>
+  <div class="search_btn">
+    <dx-button class="btn"
+      text="Search"
+      (click)="findAnyUser()">
+    </dx-button>
+  </div>
+  <div class="show_all_btn">
+    <dx-button class="all_btn"
+      text="Show All"
+      (click)="getAllUsers()">
+    </dx-button>
+  </div>
+</div>
+<div id="data-grid-demo">
+  <dx-data-grid id="gridContainer"
+    [dataSource]="dataSource"
+    keyExpr="id"
+    [showBorders]="true">
+
+    <dxo-paging [enabled]="false"></dxo-paging>
+    <dxo-editing mode="popup"
+      [allowUpdating]="true"
+      [allowDeleting]="true">
+
+      <dxo-popup title="User Info"
+        [showTitle]="true"
+        [width]="700"
+        [height]="'auto'">
+      </dxo-popup>
+      <dxo-form>
+        <dxi-item itemType="group"
+          [colCount]="2"
+          [colSpan]="2">
+          <dxi-item dataField="firstName"></dxi-item>
+          <dxi-item dataField="lastName"></dxi-item>
+          <dxi-item dataField="patronymic"></dxi-item>
+          <dxi-item dataField="email"></dxi-item>
+          <dxi-item dataField="phone"></dxi-item>
+        </dxi-item>
+      </dxo-form>
+    </dxo-editing>
+
+    <dxi-column dataField="id"
+      [width]="40">
+    </dxi-column>
+    <dxi-column dataField="fio"
+      [visible]="false">
+    </dxi-column>
+    <dxi-column dataField="firstName"></dxi-column>
+    <dxi-column dataField="lastName"></dxi-column>
+    <dxi-column dataField="patronymic"></dxi-column>
+    <dxi-column dataField="email"></dxi-column>
+    <dxi-column dataField="phone"></dxi-column>
+    <dxi-column dataField="lastVisit"></dxi-column>
+    <dxi-column dataField="status"></dxi-column>
+  </dx-data-grid>
+</div>
