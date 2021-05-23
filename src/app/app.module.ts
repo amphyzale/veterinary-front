@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,13 @@ import { ProfileModule } from './pages/profile/profile.module';
 import { MyProfileModule } from './pages/my-profile/my-profile.module';
 import { AdminModule } from './pages/admin/admin.module';
 import { ScheduleModule } from './pages/schedule/schedule.module';
+import { AccountModule } from './pages/my-profile/components/account/account.module';
+import { AdminDoctorsModule } from './pages/admin/components/admin-doctors/admin-doctors.module';
+import { AdminUsersModule } from './pages/admin/components/admin-users/admin-users.module';
+import { ContactModule } from './pages/contact/contact.module';
+//import { MyAccountUpdateDialogModule } from './shared/components/dialog-components/my-account-update-dialog/my-account-update-dialog.module';
+
+// здесь импорты только модулей сначала создается модуль ng g m blablabla затем уже ng g c blablabla в том терминале
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,7 +46,14 @@ import { ScheduleModule } from './pages/schedule/schedule.module';
     ProfileModule,
     MyProfileModule,
     ScheduleModule,
-    AdminModule
+    AdminModule,
+    AccountModule,
+    AdminDoctorsModule,
+    AdminUsersModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCU2pE9zMg4oMLomghyXHO0VKbW9eyXDgM'
+    }),
+    ContactModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

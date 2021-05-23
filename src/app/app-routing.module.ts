@@ -17,6 +17,8 @@ import { ScheduleComponent } from './pages/schedule/schedule.component';
 import { AdminDoctorsComponent } from './pages/admin/components/admin-doctors/admin-doctors.component';
 import { AdminPetsComponent } from './pages/admin/components/admin-pets/admin-pets.component';
 import { AdminUsersComponent } from './pages/admin/components/admin-users/admin-users.component';
+import { AccountComponent } from './pages/my-profile/components/account/account.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -42,7 +44,8 @@ const routes: Routes = [
       { path: 'admin-pets', component: AdminPetsComponent }
     ]
   },
-  { path: 'schedule', component: ScheduleComponent }
+  { path: 'schedule', component: ScheduleComponent },
+  { path: 'contact', component: ContactComponent},
 ];
 
 @NgModule({
