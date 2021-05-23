@@ -68,7 +68,13 @@
             </ul>
             <ul>
               <li><a href="" class="nav-link">DOCTORS</a></li>
-              <li><a href="" class="nav-link">CONTACT</a></li>
+            </ul>
+            <ul class="navbar-nav mr-auto" routerLinkActive="active">
+              <li class="nav-item">
+                <a href="/contact" class="nav-link" routerLink="contact"
+                  >CONTACT</a
+                >
+              </li>
             </ul>
             <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
               <li class="nav-item">

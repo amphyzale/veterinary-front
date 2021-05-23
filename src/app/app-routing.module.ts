@@ -15,6 +15,7 @@ import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 import { AccountComponent } from './pages/my-profile/components/account/account.component';
 import { AdminDoctorsComponent } from './pages/my-profile/components/admin-doctors/admin-doctors.component';
 import { AdminUsersComponent } from './pages/my-profile/components/admin-users/admin-users.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,11 +26,8 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'services', component: ServicesComponent},
   { path: 'service/:id', component: ServiceComponent},
-  { path: 'profile', component: ProfileComponent, children: [
-    { path: 'my-account', component: MyAccountComponent},
-    { path: 'chat', component: ChatComponent}
-  ]},
-  {path: 'my-profile', component: MyProfileComponent, children: [
+  { path: 'contact', component: ContactComponent},
+  { path: 'my-profile', component: MyProfileComponent, children: [
     { path: 'account', component: AccountComponent},
     { path: 'chat', component: ChatComponent},
     { path: 'admin-doctors', component: AdminDoctorsComponent},
