@@ -1,20 +1,23 @@
 <div id="data-grid-demo">
-  <dx-data-grid id="gridContainer"
-    keyExpr="id"
-    [dataSource]="dataSource"
+  <dx-data-grid id="gridContainer" 
+    keyExpr="id" 
+    [dataSource]="dataSource" 
     [showBorders]="true">
 
     <dxo-paging [enabled]="false"></dxo-paging>
-    <dxo-editing mode="popup"
-      [allowAdding]="false"
-      [allowUpdating]="false"
+    <dxo-editing mode="popup" 
+      [allowAdding]="false" 
+      [allowUpdating]="false" 
       [allowDeleting]="false">
     </dxo-editing>
 
-    <dxi-column dataField="id"
+    <dxi-column dataField="id" 
       [width]="40">
     </dxi-column>
-    <dxi-column dataField="petPic"
+    <dxi-column dataField="petPic" 
+      [width]="115" 
+      [allowFiltering]="false" 
+      [allowSorting]="false"
       cellTemplate="cellTemplate">
     </dxi-column>
     <dxi-column dataField="nickname">
@@ -25,8 +28,8 @@
     </dxi-column>
     <dxi-column dataField="gender">
     </dxi-column>
-    <dxi-column dataField="birthDate"
-      dataType="date"
+    <dxi-column dataField="birthDate" 
+      dataType="date" 
       [format]="dateTimeFormat">
     </dxi-column>
     <div *dxTemplate="let data of 'cellTemplate'">
