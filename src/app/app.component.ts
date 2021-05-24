@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { ApiHelperService } from "./helpers/api-hepler.service";
 import { TokenStorageService } from "./helpers/token-storage.service";
 import { AuthenticationService } from "./pages/authentication/shared/authentication.service";
+import { Roles } from "./shared/enums/role";
 
 @Component({
   selector: "app-root",
@@ -41,10 +42,7 @@ export class AppComponent {
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
-
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      //this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-
+      this.showAdminBoard = this.roles.includes(Roles.Grand) && this.roles.includes(Roles.Admin);
       this.username = user.username;
     }
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { UserModel } from 'src/app/shared/models/user.model';
 import { MyProfileService } from './shared/my-profile.service';
 
 @Component({
@@ -16,8 +16,11 @@ export class MyProfileComponent implements OnInit {
 
   showChat: boolean;
 
-  constructor(private router: Router) {
+  userProfile: UserModel;
+
+  constructor(public service: MyProfileService) {
     this.showAccount = true;
+    this.service.getProfile().subscribe((info) => this.userProfile = info);
   }
 
   ngOnInit(): void {

@@ -1,3 +1,4 @@
+import { DoctorsModule } from './pages/doctors/doctors.module';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -24,9 +25,6 @@ import { AccountModule } from './pages/my-profile/components/account/account.mod
 import { AdminDoctorsModule } from './pages/admin/components/admin-doctors/admin-doctors.module';
 import { AdminUsersModule } from './pages/admin/components/admin-users/admin-users.module';
 import { ContactModule } from './pages/contact/contact.module';
-//import { MyAccountUpdateDialogModule } from './shared/components/dialog-components/my-account-update-dialog/my-account-update-dialog.module';
-
-// здесь импорты только модулей сначала создается модуль ng g m blablabla затем уже ng g c blablabla в том терминале
 
 @NgModule({
   declarations: [AppComponent],
@@ -53,7 +51,8 @@ import { ContactModule } from './pages/contact/contact.module';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCU2pE9zMg4oMLomghyXHO0VKbW9eyXDgM'
     }),
-    ContactModule
+    ContactModule,
+    DoctorsModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

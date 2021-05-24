@@ -61,19 +61,19 @@
                 <a href="/schedule" class="nav-link" routerLink="schedule">SCHEDULE</a>
               </li>
             </ul>
-            <ul>
-              <li><a href="" class="nav-link">DOCTORS</a></li>
-              <!-- <li><a href="" class="nav-link">CONTACT</a></li> -->
-            </ul>
-            <ul>
+            <ul class="navbar-nav mr-auto" routerLinkActive="active">
               <li class="nav-item">
-                <a href="/admin" class="nav-link" routerLink="admin">ADMIN PAGE</a></li>
+                <a href="/doctors" class="nav-link" routerLink="doctors">DOCTORS</a>
+              </li>
+            </ul>
+            <ul *ngIf="showAdminBoard">
+              <li class="nav-item">
+                <a href="/admin" class="nav-link" routerLink="admin">ADMIN PAGE</a>
+              </li>
             </ul>
             <ul class="navbar-nav mr-auto" routerLinkActive="active">
               <li class="nav-item">
-                <a href="/contact" class="nav-link" routerLink="contact"
-                  >CONTACT</a
-                >
+                <a href="/contact" class="nav-link" routerLink="contact">CONTACT</a>
               </li>
             </ul>
             <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">

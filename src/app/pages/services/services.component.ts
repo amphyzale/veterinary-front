@@ -8,7 +8,9 @@ import { ServicesService } from './shared/services.service';
   providers: [ServicesService],
 })
 export class ServicesComponent implements OnInit {
-  constructor() {}
+  constructor() {
+    
+  }
 
   ngOnInit(): void {}
 }

@@ -2,7 +2,7 @@ import { Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { ApiHelperService } from "src/app/helpers/api-hepler.service";
-import { DoctorModel } from "./doctor.model";
+import { DoctorModel } from "../models/doctor.model";
 
 const METHOD_GET_ALL = "/doctors/all_doctors";
 const METHOD_FIND = "/doctors/doctor";

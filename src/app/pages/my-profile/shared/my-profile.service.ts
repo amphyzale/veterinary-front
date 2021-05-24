@@ -4,7 +4,6 @@ import { ApiHelperService } from 'src/app/helpers/api-hepler.service';
 import { Observable } from 'rxjs';
 import { UserModel } from 'src/app/shared/models/user.model';
 import { tap } from 'rxjs/operators';
-import { PetModel } from 'src/app/shared/models/pet.model';
 
 const METHOD_GET_PROFILE = "/users/profile";
 const METHOD_UPDATE_PROFILE = "/users/update_profile";
@@ -42,7 +41,6 @@ export class MyProfileService {
   }
 
   getCurrentUserId(): number {
-    console.log(this.currentUserId);
     return this.currentUserId;
   }
 }

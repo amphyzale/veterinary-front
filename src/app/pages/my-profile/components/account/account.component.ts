@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { MyProfileService } from "../../shared/my-profile.service";
 import notify from 'devextreme/ui/notify';
 import { UserModel } from "src/app/shared/models/user.model";
@@ -15,32 +15,10 @@ export class AccountComponent {
   closeButtonOptions: any;
   positionOf: string;
 
-  userProfile: UserModel = {
-    firstName: '',
-    lastName: '',
-    patronymic: '',
-    userPic: '',
-    email: '',
-    phone: '',
-    locale: '',
-    //gender: this.genders[0],
-    gender: ''
-  };
+  @Input()
+  userProfile: UserModel;
 
-  genders: string[] = ['Male', 'Female'];
-
-  constructor(public service: MyProfileService) {
-    this.service.getProfile().subscribe((info) => {
-      this.userProfile.firstName = info.firstName;
-      this.userProfile.lastName = info.lastName;
-      this.userProfile.patronymic = info.patronymic;
-      this.userProfile.userPic = info.userPic;
-      this.userProfile.email = info.email;
-      this.userProfile.phone = info.phone;
-      this.userProfile.locale = info.locale;
-      this.userProfile.gender = info.gender;
-    });
-  }
+  constructor(public service: MyProfileService) { }
 
   closePopup() {
     this.popupVisible = false;

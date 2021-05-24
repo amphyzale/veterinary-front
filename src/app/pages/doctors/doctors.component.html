@@ -1,0 +1,40 @@
+<div class="site-section_green">
+  <div class="container_1">
+      <h2 class="text_white">Our Doctors</h2>
+  </div>
+</div>
+
+<div class="container_1" *ngIf="!!dataSource">
+
+  <div class="row">
+      <div class="row_parts" data-aos="fade-up" data-aos-delay="">
+          <div class="doctors">
+              <img class="row_img" src="../assets/images/doctor-3.jpeg">
+              <h3 class="doctors_text_green">Dr. {{dataSource[1]?.fio}}</h3>
+              <p data-aos="fade-up" data-aos-delay="100">
+                {{dataSource[1]?.specialization}}
+              </p>
+          </div>
+      </div>
+
+      <div class="row_parts" data-aos="fade-up" data-aos-delay="100">
+          <div class="doctors">
+              <img class="row_img" src="../assets/images/doctor-1.jpg">
+              <h3 class="doctors_text_green">Dr. {{dataSource[2]?.fio}}</h3>
+              <p data-aos="fade-up" data-aos-delay="100">
+                {{dataSource[2]?.specialization}}
+              </p>
+          </div>
+      </div>
+
+      <div class="row_parts" data-aos="fade-up" data-aos-delay="200">
+          <div class="doctors">
+              <img class="row_img" src="../assets/images/doctor-2.jpg">
+              <h3 class="doctors_text_green">Dr. {{dataSource[3]?.fio}}</h3>
+              <p data-aos="fade-up" data-aos-delay="100">
+                {{dataSource[3]?.specialization}}
+              </p>
+          </div>
+      </div>
+  </div>
+</div>

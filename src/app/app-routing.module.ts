@@ -1,3 +1,4 @@
+import { DoctorsComponent } from './pages/doctors/doctors.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'doctors', component: DoctorsComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'service/:id', component: ServiceComponent },
   {

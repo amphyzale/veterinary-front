@@ -5,8 +5,12 @@
     <div class="profile_menu">
       <div class="avatar">
         <!--user avatar here-->
-        <p>*photo*</p>
-        <p>Username</p>
+        <div *ngIf="!userProfile?.userPic;else pic">
+          <p>*photo*</p>
+          <p>Username</p>
+        </div>
+        <img #pic
+          [src]="userProfile?.userPic" />
       </div>
 
       <div class="functionality">
@@ -23,7 +27,7 @@
     <div class="clear-fix">
       <div class="container">
         <div *ngIf="showAccount">
-          <app-account></app-account>
+          <app-account [userProfile]="userProfile"></app-account>
         </div>
         <div *ngIf="showPets">
           <app-pets></app-pets>

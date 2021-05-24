@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { dateTimeFormat } from "src/app/shared/functions/date-time-format";
-import { DoctorService } from "./shared/admin-doctors.service";
-import { DoctorModel } from "./shared/doctor.model";
+import { DoctorService } from "../../../../shared/services/admin-doctors.service";
+import { DoctorModel } from "../../../../shared/models/doctor.model";
 
 @Component({
   selector: "app-admin-doctors",
