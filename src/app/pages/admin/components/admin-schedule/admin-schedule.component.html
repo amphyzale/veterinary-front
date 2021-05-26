@@ -1,0 +1,50 @@
+<div id="data-grid-demo">
+    <dx-data-grid id="gridContainer" keyExpr="id" [dataSource]="dataSource" [showBorders]="true">
+
+        <dxo-paging [enabled]="false"></dxo-paging>
+        <dxo-editing mode="popup" [allowAdding]="false" [allowUpdating]="true" [allowDeleting]="true">
+
+            <dxo-popup title="Info" [showTitle]="true" [width]="700" [height]="'auto'">
+            </dxo-popup>
+            <dxo-form>
+                <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+                    <dxi-item dataField="startDate"></dxi-item>
+                    <dxi-item dataField="endDate"></dxi-item>
+                    <dxi-item caption="Service" dataField="service.id"></dxi-item>
+                    <dxi-item caption="Owner" dataField="user.id"></dxi-item>
+                    <dxi-item caption="Pet" dataField="pet.id"></dxi-item>
+                    <dxi-item caption="Doctor" dataField="doctor.id"></dxi-item>
+                    <dxi-item dataField="status"></dxi-item>
+                </dxi-item>
+            </dxo-form>
+        </dxo-editing>
+
+        <dxi-column dataField="id" [width]="40">
+        </dxi-column>
+        <dxi-column dataField="startDate" dataType="dateTime" [format]="dateTimeFormat">
+        </dxi-column>
+        <dxi-column dataField="endDate" dataType="dateTime" [format]="dateTimeFormat">
+        </dxi-column>
+        <dxi-column caption="Service" dataField="service.id">
+            <dxo-lookup [dataSource]="services" displayExpr="name" valueExpr="id">
+            </dxo-lookup>
+        </dxi-column>
+        <dxi-column caption="Owner" dataField="user.id">
+            <dxo-lookup [dataSource]="users" displayExpr="fio" valueExpr="id">
+            </dxo-lookup>
+        </dxi-column>
+        <dxi-column caption="Pet" dataField="pet.id">
+            <dxo-lookup [dataSource]="pets" displayExpr="nickname" valueExpr="id">
+            </dxo-lookup>
+        </dxi-column>
+        <dxi-column caption="Doctor" dataField="doctor.id">
+            <dxo-lookup [dataSource]="doctors" displayExpr="fio" valueExpr="id">
+            </dxo-lookup>
+        </dxi-column>
+        <dxi-column dataField="status">
+        </dxi-column>
+        <div *dxTemplate="let data of 'cellTemplate'">
+            <img [src]="data.value" />
+        </div>
+    </dx-data-grid>
+</div>

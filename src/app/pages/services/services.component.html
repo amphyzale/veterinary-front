@@ -4,10 +4,39 @@
   </div>
 </div>
 
-<div class="container_1">
+<div class="container_1" *ngIf="!!dataSource">
+
+  <div class="row">
+      <div class="row_parts" data-aos="fade-up" data-aos-delay="" *ngFor="let source of dataSource">
+          <div class="services">
+              <!--<img class="row_img" src="../assets/images/doctor-3.jpeg">-->
+              <img #pic
+              [src]="source?.image"/>
+              <h3 class="services_text_green">{{source?.name}}</h3>
+              <p data-aos="fade-up" data-aos-delay="100">
+                Price: {{source?.price}}
+              </p>
+              <p data-aos="fade-up" data-aos-delay="100">
+                Duration (hour): {{source?.duration}}
+              </p>
+              <p data-aos="fade-up" data-aos-delay="100">
+                Description: {{source?.description}}
+              </p>
+              <p data-aos="fade-up" data-aos-delay="100">
+                Doctors:
+              </p>
+              <p data-aos="fade-up" data-aos-delay="100" *ngFor="let doctor of source.doctors">
+                {{doctor.fio}}
+              </p>
+            </div>
+      </div>
+    </div> 
+  </div>
+
+<!--<div class="container_1">
   <app-service-element></app-service-element>
   <app-service-element></app-service-element>
   <app-service-element></app-service-element>
   <app-service-element></app-service-element>
-</div>
+</div>-->
 

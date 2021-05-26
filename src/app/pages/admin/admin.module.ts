@@ -5,11 +5,12 @@ import { AdminDoctorsModule } from './components/admin-doctors/admin-doctors.mod
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
+import { AdminScheduleComponent } from './components/admin-schedule/admin-schedule.component';
 
 
 
 @NgModule({
-  declarations: [AdminComponent],
+  declarations: [AdminComponent/*, AdminScheduleComponent*/],
   imports: [
     CommonModule,
     AdminDoctorsModule,

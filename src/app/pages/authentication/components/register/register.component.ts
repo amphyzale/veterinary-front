@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { dateTimeFormat } from 'src/app/shared/functions/date-time-format';
 
 import { UserRegisterInfo } from '../../models/authentication.model';
@@ -40,7 +41,7 @@ export class RegisterComponent {
 
   validatedFirstName: boolean;
 
-  constructor(private authenticationService: AuthenticationService) {
+  constructor(private authenticationService: AuthenticationService, private router: Router) {
     this.maxDate = new Date(this.maxDate.setFullYear(this.maxDate.getFullYear()-18));
     this.user = {
       email: '',
@@ -62,6 +63,7 @@ export class RegisterComponent {
   onRegister() {
     this.user.birthDate = dateTimeFormat(this.user.birthDate);
     this.authenticationService.register(this.user).toPromise();
+    this.router.navigate([""]);
   }
 
   onValidatedEmail(isValid: boolean) {

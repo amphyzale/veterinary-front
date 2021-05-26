@@ -4,7 +4,7 @@ import { Injectable } from "@angular/core";
 import { ApiHelperService } from "src/app/helpers/api-hepler.service";
 import { DoctorModel } from "../models/doctor.model";
 
-const METHOD_GET_ALL = "/doctors/all_doctors";
+const METHOD_GET_ALL = "/index/all_doctors";
 const METHOD_FIND = "/doctors/doctor";
 
 @Injectable()

@@ -20,6 +20,7 @@ import { AdminPetsComponent } from './pages/admin/components/admin-pets/admin-pe
 import { AdminUsersComponent } from './pages/admin/components/admin-users/admin-users.component';
 import { AccountComponent } from './pages/my-profile/components/account/account.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { AdminScheduleComponent } from './pages/admin/components/admin-schedule/admin-schedule.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -43,7 +44,8 @@ const routes: Routes = [
       { path: 'chat', component: ChatComponent },
       { path: 'admin-doctors', component: AdminDoctorsComponent },
       { path: 'admin-users', component: AdminUsersComponent },
-      { path: 'admin-pets', component: AdminPetsComponent }
+      { path: 'admin-pets', component: AdminPetsComponent },
+      { path: 'admin-schedule', component: AdminScheduleComponent}
     ]
   },
   { path: 'schedule', component: ScheduleComponent },

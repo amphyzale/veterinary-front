@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DoctorModel } from 'src/app/shared/models/doctor.model';
+import { ServicesModel } from 'src/app/shared/models/services.model';
 import { ServicesService } from './shared/services.service';
 
 @Component({
@@ -7,10 +9,10 @@ import { ServicesService } from './shared/services.service';
   styleUrls: ["./services.component.less"],
   providers: [ServicesService],
 })
-export class ServicesComponent implements OnInit {
-  constructor() {
-    
-  }
+export class ServicesComponent {
+  dataSource: ServicesModel[] = [];
 
-  ngOnInit(): void {}
+  constructor(private service: ServicesService) {
+    this.service.getServices().subscribe((services) => this.dataSource = services);
+  }
 }

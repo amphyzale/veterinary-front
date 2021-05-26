@@ -2,17 +2,19 @@ import { Appointment } from './shared/model';
 import { Subject } from 'rxjs';
 import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { off, on } from 'devextreme/events';
+import { ScheduleService } from './shared/schedule.service';
 
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.less']
+  styleUrls: ['./schedule.component.less'],
+  providers: [ScheduleService]
 })
 export class ScheduleComponent implements AfterViewInit, OnDestroy {
 
   private ngUnsubscribe$ = new Subject<void>();
 
-  dataSource: Appointment[] = [];
+  dataSource: Appointment[];
 
   currentDate = new Date(Date.now());
 
@@ -22,7 +24,8 @@ export class ScheduleComponent implements AfterViewInit, OnDestroy {
 
   appointmentData: any;
 
-  constructor() {
+  constructor(public service: ScheduleService) {
+    this.service.getSchedule().subscribe((info) => this.dataSource = info);
     this.downHandler = this.downHandler.bind(this);
     this.upHandler = this.upHandler.bind(this);
   }

@@ -25,6 +25,10 @@ export class AdminComponent implements OnInit {
     this.router.navigate(["/admin", "admin-pets"]);
   }
 
+  goToSchedule() {
+    this.router.navigate(["/admin", "admin-schedule"]);
+  }
+
   goToChat() {
     this.router.navigate(["/admin", "chat"]);
   }

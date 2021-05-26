@@ -25,6 +25,7 @@ import { AccountModule } from './pages/my-profile/components/account/account.mod
 import { AdminDoctorsModule } from './pages/admin/components/admin-doctors/admin-doctors.module';
 import { AdminUsersModule } from './pages/admin/components/admin-users/admin-users.module';
 import { ContactModule } from './pages/contact/contact.module';
+import { AdminScheduleModule } from './pages/admin/components/admin-schedule/admin-schedule.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -52,7 +53,8 @@ import { ContactModule } from './pages/contact/contact.module';
       apiKey: 'AIzaSyCU2pE9zMg4oMLomghyXHO0VKbW9eyXDgM'
     }),
     ContactModule,
-    DoctorsModule
+    DoctorsModule,
+    AdminScheduleModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
